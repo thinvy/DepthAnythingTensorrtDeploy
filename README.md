@@ -117,10 +117,14 @@ make -j32
 
 | weight | quantize  | time  |
 |  ----  | ----      | ----  |
-| vit-s  | fp16      | 2.95ms|
-| vit-s  | int8+fp16 | 2.77ms|
+| vit-s (batch 1)  | fp16      | 2.95ms|
+| vit-s (batch 1)  | int8+fp16 | 2.77ms|
 
 具体细节可以从[转换好的vit-s的预训练模型](https://drive.google.com/drive/folders/1qPGPQcSSnHHeMq0eU7Vrm3DD_9dTAD-7?usp=sharing)中pref的json文件，或者图片可视化的trt模型结构中找到每一层layer的耗时信息、输入输出的shape与对应的量化信息
+
+这里8/16混合量化性能差距很小可以参考这两者trt模型的可视化，纯fp16推理的模型encoder在第一层conv后被融合为了一个layer，TensorRT的新版本对VIT pattern的性能优化的很好。8/16混合量化的模型，encoder的内部所有的conv被量化为int8，conv输出再reformat到fp16送入transformer block，这一堆的转换开销较大，并且导致整个encoder不能被融合为一个layer做优化。比较简单解决方法是在pytorch做ptq只对decoder插qdq做int8量化，endocer不做量化，这样通过量化提升decoder推理速度的同时，保留了tensorrt对encoder优化。但是不知道tensorrt对jetson orin平台的vit layer优化是否也能达到这个水平，实际部署场景中可以考虑手动实现一个8bit的vit layer，对整个网络做ptq，追求在嵌入式平台中的性能。
+
+我测试的模型推理的过程中，gpu利用率仅有30%左右，在多图任务场景下（环视感知等）扩大batch部署可以有效提升整体的效率
 
 ### Acknowledgement
 - Depth-Anything : https://github.com/LiheYoung/Depth-Anything
