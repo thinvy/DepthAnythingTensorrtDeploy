@@ -1,6 +1,7 @@
 [![ONNX](https://img.shields.io/badge/ONNX-grey)](https://onnx.ai/)
-[![GitHub Repo stars](https://img.shields.io/github/stars/fabio-sim/Depth-Anything-ONNX)](https://github.com/fabio-sim/Depth-Anything-ONNX/stargazers)
-[![GitHub all releases](https://img.shields.io/github/downloads/fabio-sim/Depth-Anything-ONNX/total)](https://github.com/fabio-sim/Depth-Anything-ONNX/releases)
+[![TensorRT](https://img.shields.io/badge/TensorRT-76B900)](https://developer.nvidia.com/tensorrt)
+[![GitHub Repo stars](https://img.shields.io/github/stars/thinvy/DepthAnythingTensorrtDeploy)](https://github.com/fabio-sim/Depth-Anything-ONNX/stargazers)
+[![GitHub all releases](https://img.shields.io/github/downloads/thinvy/DepthAnythingTensorrtDeploy/total)](https://github.com/fabio-sim/Depth-Anything-ONNX/releases)
 
 # Depth Anything Tensorrt Deploy
 
@@ -8,8 +9,6 @@ NVIDIA TensorRT compatible implementation of [Depth Anything: Unleashing the Pow
 
 <p align="center"><img src="assets/sample.png" width=90%>
 
-<details>
-<summary>Changelog</summary>
 
 ### 环境配置
 
