@@ -8,7 +8,7 @@
 NVIDIA TensorRT compatible implementation of [Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data](https://github.com/LiheYoung/Depth-Anything).
 
 <div align=center>
-<img src="https://github.com/LiheYoung/Depth-Anything/blob/main/assets/teaser.png" width=90%>
+<img src="https://github.com/LiheYoung/Depth-Anything/blob/main/assets/teaser.png" width=100%>
 </div>
 
 
