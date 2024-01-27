@@ -5,7 +5,7 @@
 
 # Depth Anything Tensorrt Deploy
 
-NVIDIA TensorRT compatible implementation of [Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data](https://github.com/LiheYoung/Depth-Anything).
+NVIDIA TensorRT deployment of [Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data](https://github.com/LiheYoung/Depth-Anything).
 
 <div align=center>
 <img src="https://github.com/LiheYoung/Depth-Anything/blob/main/assets/teaser.png" width=100%>
@@ -57,7 +57,7 @@ onnxsim \
 
 3. onnx转trt engin模型文件，这里指定`--fp16`采用fp16推理精度
 
-也可以指定`--int8 --fp16`做混合精度量化，开启后会对decoder和其他部分的conv等算子按int8量化，在pc的显卡上性能提升不明显，但在jetson这一类设备上面困难会有比较明显的提升，但不进行校准的话输出就不能看了
+也可以指定`--int8 --fp16`做混合精度量化，开启后会对decoder和其他部分的conv等算子按int8量化，在pc的显卡上性能提升不明显，但在jetson这一类设备上面困难会有比较明显的提升，但不进行校准的话输出就不能看了（这里提供的8/16混合量化的trt模型没有经过校准，只做性能测试）
 
 不能只指定`--int8`，中间vit中的一部分不能被trtexec量化到int8，会被以fp32精度推理，所以速度反而更慢了。如果想要纯int8推理，需要在pytorch导出onnx时进行ptq显式量化，并开发tensorrt相应的融合layer的插件与算子
 ```
