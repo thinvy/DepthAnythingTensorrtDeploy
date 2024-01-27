@@ -1,0 +1,10 @@
+numpy
+onnx
+onnxruntime-gpu
+opencv-python
+torch
+torchvision
+tqdm
+gradio_imageslider
+gradio==4.14.0
+huggingface_hub
