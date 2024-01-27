@@ -116,9 +116,11 @@ make -j32
 性能参考：
 
 | weight | quantize  | time  |
+|  ----  | ----      | ----  |
 | vit-s  | fp16      | 2.95ms|
 | vit-s  | int8+fp16 | 2.77ms|
 
+具体细节可以从[转换好的vit-s的预训练模型](https://drive.google.com/drive/folders/1qPGPQcSSnHHeMq0eU7Vrm3DD_9dTAD-7?usp=sharing)中pref的json文件，或者图片可视化的trt模型结构中找到每一层layer的耗时信息、输入输出的shape与对应的量化信息
 
 ### Acknowledgement
 - Depth-Anything : https://github.com/LiheYoung/Depth-Anything
