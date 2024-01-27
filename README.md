@@ -7,7 +7,7 @@
 
 NVIDIA TensorRT compatible implementation of [Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data](https://github.com/LiheYoung/Depth-Anything).
 
-<p align="center"><img src="assets/sample.png" width=90%>
+<p align="center"><img src="[assets/sample.png](https://github.com/LiheYoung/Depth-Anything/blob/main/assets/teaser.png?raw=true)" width=90%>
 
 
 ### 环境配置
