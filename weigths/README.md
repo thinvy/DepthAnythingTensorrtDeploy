@@ -1,0 +1,5 @@
+```
+mkdir weights
+curl ...
+
+```
