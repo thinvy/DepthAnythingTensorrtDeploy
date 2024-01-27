@@ -110,8 +110,11 @@ make -j32
 ./DepthAnythingTRTDemo
 ```
 **性能参考**
+
 测试环境：PC (14700k + RTX3080TI); Ubuntu20.04 cuda11.7 tensorrt8.6
+
 性能参考：
+
 | weight | quantize  | time  |
 | vit-s  | fp16      | 2.95ms|
 | vit-s  | int8+fp16 | 2.77ms|
