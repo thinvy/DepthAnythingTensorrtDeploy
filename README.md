@@ -1,3 +1,16 @@
+[![ONNX](https://img.shields.io/badge/ONNX-grey)](https://onnx.ai/)
+[![GitHub Repo stars](https://img.shields.io/github/stars/fabio-sim/Depth-Anything-ONNX)](https://github.com/fabio-sim/Depth-Anything-ONNX/stargazers)
+[![GitHub all releases](https://img.shields.io/github/downloads/fabio-sim/Depth-Anything-ONNX/total)](https://github.com/fabio-sim/Depth-Anything-ONNX/releases)
+
+# Depth Anything Tensorrt Deploy
+
+NVIDIA TensorRT compatible implementation of [Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data](https://github.com/LiheYoung/Depth-Anything).
+
+<p align="center"><img src="assets/sample.png" width=90%>
+
+<details>
+<summary>Changelog</summary>
+
 ### 环境配置
 
 1. 配置配置pytorch gpu环境，与工程下的requestment.txt
@@ -92,4 +105,38 @@ cd build
 cmake ..
 make -j32
 ./DepthAnythingTRTDemo
+```
+**性能参考**
+测试环境：PC (14700k + RTX3080TI); Ubuntu20.04 cuda11.7 tensorrt8.6
+性能参考：
+| weight | quantize  | time  |
+| vit-s  | fp16      | 2.95ms|
+| vit-s  | int8+fp16 | 2.77ms|
+
+
+### Acknowledgement
+- Depth-Anything : https://github.com/LiheYoung/Depth-Anything
+- Depth Anything ONNX: https://github.com/fabio-sim/Depth-Anything-ONNX
+- Depth Anything TensorRT: https://github.com/spacewalk01/depth-anything-tensorrt
+
+
+### Credits
+If you use any ideas from the papers or code in this repo, please consider citing the authors of [Depth Anything](https://arxiv.org/abs/2401.10891) and [DINOv2](https://arxiv.org/abs/2304.07193). Lastly, if the ONNX versions helped you in any way, please also consider starring this repository.
+
+```bibtex
+@article{depthanything,
+      title={Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data}, 
+      author={Yang, Lihe and Kang, Bingyi and Huang, Zilong and Xu, Xiaogang and Feng, Jiashi and Zhao, Hengshuang},
+      journal={arXiv:2401.10891},
+      year={2024}
+}
+```
+
+```bibtex
+@misc{oquab2023dinov2,
+  title={DINOv2: Learning Robust Visual Features without Supervision},
+  author={Oquab, Maxime and Darcet, Timothée and Moutakanni, Theo and Vo, Huy V. and Szafraniec, Marc and Khalidov, Vasil and Fernandez, Pierre and Haziza, Daniel and Massa, Francisco and El-Nouby, Alaaeldin and Howes, Russell and Huang, Po-Yao and Xu, Hu and Sharma, Vasu and Li, Shang-Wen and Galuba, Wojciech and Rabbat, Mike and Assran, Mido and Ballas, Nicolas and Synnaeve, Gabriel and Misra, Ishan and Jegou, Herve and Mairal, Julien and Labatut, Patrick and Joulin, Armand and Bojanowski, Piotr},
+  journal={arXiv:2304.07193},
+  year={2023}
+}
 ```
