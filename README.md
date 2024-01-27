@@ -8,17 +8,22 @@
 
 > https://zhuanlan.zhihu.com/p/392143346
 
-1. 额外的tensorrt环境变量，设置trtexec应用的环境变量
+3. 额外的tensorrt环境变量，设置trtexec应用的环境变量
 ```
 # 写入 ～/.bashrc 中
 export PATH=/opt/tensorrt/TensorRT-8.6.0.12/bin:$PATH
 # 退出后source一下
 ```
 
-1. 源码安装tensorrt python包：
+4. 源码安装tensorrt python包：
+```
 https://github.com/NVIDIA/TensorRT/tree/release/8.6/tools/experimental/trt-engine-explorer
+```
 
-1. 配置Opencv4 C++环境
+5. (c++ runtime 测试依赖) 配置Opencv4 C++环境
+
+6. (可选)下载[转换好的vit-s的预训练模型](https://drive.google.com/drive/folders/1qPGPQcSSnHHeMq0eU7Vrm3DD_9dTAD-7?usp=sharing)放在weigth文件夹中，用于直接测试（带有int8量化的模型由于没有校准，输出不可用，建议pc端测试fp16部署，jetson平台测试int8-fp16混合精度量化）
+
 
 ### 模型转换
 
