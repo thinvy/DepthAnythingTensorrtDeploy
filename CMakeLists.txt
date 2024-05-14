@@ -7,9 +7,10 @@ set(CMAKE_CXX_STANDARD 14)
 # 依赖Opencv4
 find_package(OpenCV 4 REQUIRED)
 
-# 设置 TensorRT 安装路径
-set(TensorRT_ROOT /opt/tensorrt/TensorRT-8.6.0.12)
-# 设置 CUDA 安装路径
+# 设置 TensorRT 安装路径 根据当前自身系统环境
+# set(TensorRT_ROOT /opt/tensorrt/TensorRT-8.6.0.12)
+set(TensorRT_ROOT /opt/TensorRT-8.6.1.6)
+# 设置 CUDA 安装路径 根据当前自身系统环境
 set(CUDA_ROOT /usr/local/cuda)
 
 # 添加可执行文件
